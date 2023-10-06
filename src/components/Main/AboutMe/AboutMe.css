@@ -1,0 +1,133 @@
+/* aboutMe */
+
+.aboutMe__title {
+  margin: 110px auto 0;
+}
+@media screen and (max-width: 850px) {
+  .aboutMe__title {
+    margin-top: 94px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutMe__title {
+    margin-top: 70px;
+    width: calc(100% - 14px*2);
+  }
+}
+
+.aboutMe__container {
+  width: calc(100% - 70px*2);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 850px) {
+  .aboutMe__container {
+    width: calc(100% - 48px*2);
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .aboutMe__container {
+   flex-direction: column-reverse;
+   gap: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutMe__container {
+    width: calc(100% - 14px*2);
+  }
+}
+
+.aboutMe__name {
+  margin: 69px 0 0;
+}
+@media screen and (max-width: 450px) {
+  .aboutMe__name {
+    margin-top: 40px;
+  }
+}
+
+.aboutMe__speciality {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  margin: 18px 0 25px;
+}
+@media screen and (max-width: 850px) {
+  .aboutMe__speciality {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 15px;
+    margin-bottom: 17px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutMe__speciality {
+    font-size: 11px;
+    line-height: 1.45;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.aboutMe__content {
+  display: flex;
+  flex-direction: column;
+}
+.aboutMe__description {
+  margin: 0;
+  width: 600px;
+}
+@media screen and (max-width: 980px) {
+  .aboutMe__description {
+    width: auto;
+  }
+}
+
+.aboutMe__link {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-top: 103px;
+  transition: .3s ease-in-out;
+}
+.aboutMe__link:hover {
+  opacity: .7;
+}
+@media screen and (max-width: 850px) {
+  .aboutMe__link {
+    margin-top: 87px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutMe__link {
+    margin-top: 40px;
+  }
+}
+
+.aboutMe__image {
+  margin: 69px 0 0;
+}
+@media screen and (max-width: 980px) {
+  .aboutMe__image {
+    width: 255px;
+    height: 307px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .aboutMe__image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutMe__image {
+    margin-top: 60px;
+    width: 292px;
+    height: 352px;
+  }
+}

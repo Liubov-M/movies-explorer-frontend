@@ -1,0 +1,113 @@
+/* techs */
+
+.techs {
+  background-color: #272727;
+}
+@media screen and (max-width: 450px) {
+  .techs {
+    background-color: #202020;
+  }
+}
+.techs-title {
+  padding-top: 100px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 850px) {
+  .techs-title {
+    padding-top: 90px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .techs-title {
+    padding-top: 65px;
+    border-bottom: 1px solid #000;
+  }
+}
+
+.techs-subtitle {
+  text-align: center;
+  margin: 92px auto 0;
+}
+@media screen and (max-width: 850px) {
+  .techs-subtitle {
+    margin-top: 81px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .techs-subtitle {
+    margin-top: 60px;
+  }
+}
+
+.techs-text {
+  width: 460px;
+  text-align: center;
+  margin: 25px auto 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+  letter-spacing: -.64px;
+}
+@media screen and (max-width: 850px) {
+  .techs-text {
+    margin-top: 22px;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -.3px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .techs-text {
+    width: 292px;
+    margin-top: 24px;
+    font-size: 11px;
+    line-height: 1.45;
+    letter-spacing: -0.45px;
+  }
+}
+
+.techs__lists {
+  margin: 100px auto 0;
+  padding: 0 0 103px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 90px);;
+  gap: 10px;
+  justify-content: center;
+  letter-spacing: -1.3px;
+}
+@media screen and (max-width: 850px) {
+  .techs__lists {
+    margin-top: 82px;
+    padding-bottom: 89px;
+    grid-template-columns: repeat(auto-fit, 84px);
+    letter-spacing: -0.4px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .techs__lists {
+    max-width: 178px;
+    margin-top: 50px;
+    padding-bottom: 70px;
+  }
+}
+
+.techs__list {
+  text-align: center;
+  padding: 22px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  border-radius: 10px;
+  background-color: #303030;
+}
+@media screen and (max-width: 850px) {
+  .techs__list {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .techs__list {
+    padding: 21px 0;
+  }
+}

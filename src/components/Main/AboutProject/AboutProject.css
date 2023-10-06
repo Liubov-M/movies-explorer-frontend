@@ -1,0 +1,127 @@
+/* aboutProject */
+
+.aboutProject {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.aboutProject-title {
+  margin: 115px auto 0;
+}
+@media screen and (max-width: 850px) {
+  .aboutProject-title {
+    margin-top: 88px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutProject-title {
+    margin-top: 70px;
+  }
+}
+
+.aboutProject-info {
+  list-style: none;
+  margin: 72px auto 0;
+  width: calc(100% - 70px*2);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  gap: 40px;
+}
+@media screen and (max-width: 850px) {
+  .aboutProject-info {
+    width: calc(100% - 48px*2);
+    gap: 26px;
+  }
+}
+@media screen and (max-width: 565px) {
+  .aboutProject-info {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutProject-info {
+    margin-top: 60px;
+    width: calc(100% - 18px*2);
+    gap: 56px;
+  }
+}
+
+.aboutProject-item__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: -.8px;
+}
+@media screen and (max-width: 450px) {
+  .aboutProject-item__title {
+    font-size: 18px;
+  }
+}
+
+.aboutProject-item__description {
+  margin: 25px 0 0;
+}
+@media screen and (max-width: 850px) {
+  .aboutProject-item__description {
+    margin-top: 19px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutProject-item__description {
+    margin-top: 16px;
+  }
+}
+
+.aboutProject__deadlines {
+  margin: 110px auto 104px;
+  width: calc(100% - 70px*2);
+  display: grid;
+  grid-template-columns: 228px 1fr;
+  grid-template-rows: 36px 1fr;
+  row-gap: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+  text-align: center;
+}
+@media screen and (max-width: 850px) {
+  .aboutProject__deadlines {
+    margin-top: 95px;
+    margin-bottom: 88px;
+    width: calc(100% - 48px*2);
+    grid-template-columns: 140px 1fr;
+  }
+}
+@media screen and (max-width: 525px) {
+  .aboutProject__deadlines {
+    grid-template-columns: 100px 1fr;
+  }
+}
+@media screen and (max-width: 450px) {
+  .aboutProject__deadlines {
+    margin-top: 60px;
+    margin-bottom: 69px;
+    width: calc(100% - 18px*2);
+    font-size: 11px;
+  }
+}
+
+.aboutProject__back {
+  background-color: #3DDC84;
+  color: #000;
+  margin: 0;
+  padding-top: 10px;
+  display: block;
+}
+.aboutProject__front {
+  background-color: #303030;
+  color: #fff;
+  margin: 0;
+  padding-top: 10px;
+}
+.aboutProject__text {
+  color: #8B8B8B;
+  padding-bottom: 3px;
+}
