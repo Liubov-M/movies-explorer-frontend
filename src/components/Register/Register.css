@@ -1,6 +1,17 @@
+.authorization {
+  margin: 0 auto;
+  max-width: 396px;
+  height: 100vh;
+}
+
+@media screen and (max-width: 425px) {
+  .authorization {
+    width: calc(100% - 30px*2);
+  }
+}
+
 .authorization__form {
   width: 100%;
-  height: 100vh;
   margin: 0 auto;
   padding: 40px 0 0;
   display: flex;
@@ -15,17 +26,10 @@
 
 .authorization__placeholder {
   color: #8B8B8B;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 400;
   line-height: 1.21;
   margin-bottom: 10px;
-}
-
-@media screen and (max-width: 425px) {
-  .authorization__placeholder {
-    width: 260px;
-    margin: 0 auto 10px;
-  }
 }
 
 .authorization__input {
@@ -33,19 +37,11 @@
   font-size: 13px;
   line-height: 1.21;
   background-color: #2F2F2F;
-  width: 396px;
   height: 46px;
   border-radius: 8px;
-  padding: 0 0 0 15px;
+  padding-left: 15px;
   border: 0;
   color: #fff;
-}
-
-@media screen and (max-width: 425px) {
-  .authorization__input {
-    width: 260px;
-    margin: 0 auto;
-  }
 }
 
 .authorization__input_error {
@@ -57,8 +53,7 @@
   font-size: 10px;
   font-weight: 400;
   line-height: 1.21;
-  margin-top: 10px;
-  height: 12px;
+  height: 10px;
   box-sizing: border-box;
   opacity: 0;
 }
@@ -67,14 +62,16 @@
   opacity: 1;
   color: #EE3465;
 }
-
-.authorization__error:last-of-type {
+.authorization__error_small {
+  margin-top: 9px;
+}
+.authorization__error_small:last-of-type {
   margin-bottom: 69px;
 }
 
 @media screen and (max-width: 425px) {
-  .authorization__error:last-of-type {
-    margin-bottom: 150px;
+  .authorization__error_small:last-of-type {
+    margin-bottom: 155px;
   }
 }
 
@@ -84,6 +81,7 @@
   line-height: 1.21;
   color: #8B8B8B;
   text-align: center;
+  margin: 18px 0 0 0;
 }
 
 @media screen and (max-width: 425px) {
@@ -98,22 +96,15 @@
   line-height: 1.21;
   color: #4285F4;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.authorization__link:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 425px) {
   .authorization__link {
     font-size: 12px;
-  }
-}
-
-.authorization {
-  margin: 0 auto;
-  width: 396px;
-  max-height: 100vh;
-}
-
-@media screen and (max-width: 425px) {
-  .authorization {
-    width: 260px;
   }
 }

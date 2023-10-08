@@ -12,14 +12,19 @@
   color:#fff
 }
 
+.page__auth {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .section-title {
   font-size: 22px;
   font-weight: 400;
   line-height: 1.21;
-  padding-bottom: 20px;
+  padding-bottom: 23px;
   border-bottom: 1px solid #DADADA;
   width: calc(100% - 70px*2);
-  letter-spacing: -1.2px;
+  letter-spacing: -.7px;
 }
 @media screen and (max-width: 850px) {
   .section-title {
@@ -32,26 +37,6 @@
     padding-bottom: 28px;
     font-size: 18px;
     letter-spacing: -0.72px;
-  }
-}
-
-.subtitle-text {
-  font-size: 50px;
-  font-weight: 400;
-  line-height: 1.16;
-  letter-spacing: -2px;
-}
-@media screen and (max-width: 850px) {
-  .subtitle-text_size_m {
-    font-size: 40px;
-    line-height: 1;
-  }
-}
-@media screen and (max-width: 450px) {
-  .subtitle-text {
-    font-size: 30px;
-    line-height: 1.21;
-    letter-spacing: -1.2px;
   }
 }
 

@@ -16,7 +16,7 @@
 @media screen and (max-width: 850px) {
   .footer__subtitle {
     width: calc(100% - 30px*2);
-    padding-top: 36px;
+    padding-top: 79px;
   }
 }
 @media screen and (max-width: 450px) {

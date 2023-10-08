@@ -10,7 +10,7 @@ function AuthorizationHeading({children}) {
         alt='логотип проекта'
         className='authorization__logo'></img>
     </Link>
-    <h3 className="authorization__heading">{children}</h3>
+    <h1 className="authorization__heading">{children}</h1>
     </>
   )
 }

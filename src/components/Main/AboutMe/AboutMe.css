@@ -1,11 +1,11 @@
 /* aboutMe */
 
 .aboutMe__title {
-  margin: 110px auto 0;
+  margin: 107px auto 0;
 }
 @media screen and (max-width: 850px) {
   .aboutMe__title {
-    margin-top: 94px;
+    margin-top: 90px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -23,7 +23,7 @@
 }
 @media screen and (max-width: 850px) {
   .aboutMe__container {
-    width: calc(100% - 48px*2);
+    width: calc(100% - 50px*2);
     gap: 60px;
   }
 }
@@ -40,11 +40,25 @@
 }
 
 .aboutMe__name {
-  margin: 69px 0 0;
+  margin: 66px 0 0;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -2px;
+}
+@media screen and (max-width: 850px) {
+  .aboutMe__name {
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
 }
 @media screen and (max-width: 450px) {
   .aboutMe__name {
     margin-top: 40px;
+    font-size: 30px;
+    line-height: 1.21;
+    letter-spacing: -1.2px;
   }
 }
 
@@ -52,14 +66,14 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;
-  margin: 18px 0 25px;
+  margin: 18px 0 26px;
 }
 @media screen and (max-width: 850px) {
   .aboutMe__speciality {
     font-size: 12px;
     line-height: 1.5;
-    margin-top: 15px;
-    margin-bottom: 17px;
+    margin-top: 16px;
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -78,10 +92,22 @@
 .aboutMe__description {
   margin: 0;
   width: 600px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.57;
 }
 @media screen and (max-width: 980px) {
   .aboutMe__description {
     width: auto;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 525px) {
+  .aboutMe__description {
+    width: auto;
+    font-size: 11px;
+    line-height: 1.45;
   }
 }
 
@@ -92,7 +118,7 @@
   color: #fff;
   text-decoration: none;
   display: block;
-  margin-top: 103px;
+  margin-top: 99px;
   transition: .3s ease-in-out;
 }
 .aboutMe__link:hover {
@@ -116,6 +142,7 @@
   .aboutMe__image {
     width: 255px;
     height: 307px;
+    margin-top: 67px;
   }
 }
 @media screen and (max-width: 610px) {

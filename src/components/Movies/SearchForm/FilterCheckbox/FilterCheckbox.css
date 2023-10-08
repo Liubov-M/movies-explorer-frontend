@@ -38,6 +38,23 @@
   transition: .5s;
 }
 
+.filterCheckbox__switch:focus {
+  outline: 1px solid #3DDC84;
+}
+
 .filterCheckbox__switch:checked + .filterCheckbox__slider::before {
   left: 18px;
+}
+
+.filterCheckbox__switch::-moz-placeholder {
+  color: transparent;
+}
+
+.filterCheckbox__switch::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.filterCheckbox__slider:hover {
+  opacity: .7;
+  cursor: pointer;
 }

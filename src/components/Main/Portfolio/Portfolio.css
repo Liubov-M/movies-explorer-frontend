@@ -1,7 +1,7 @@
 /* portfolio */
 
 .portfolio-title {
-  margin: 100px auto 0;
+  margin: 98px auto 0;
   width: calc(100% - 70px*2);
   font-size: 18px;
   font-weight: 400;
@@ -10,7 +10,7 @@
 }
 @media screen and (max-width: 850px) {
   .portfolio-title {
-    width: calc(100% - 48px*2);
+    width: calc(100% - 50px*2);
     margin-top: 90px;
   }
 }
@@ -29,7 +29,7 @@
 }
 @media screen and (max-width: 850px) {
   .portfolio__nav {
-    width: calc(100% - 48px*2);
+    width: calc(100% - 50px*2);
   }
 }
 @media screen and (max-width: 450px) {
@@ -40,12 +40,17 @@
 
 .portfolio__lists {
   list-style: none;
-  padding: 0 0 130px;
+  padding: 0 0 125px;
   margin: 50px 0 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .portfolio__lists {
+    padding-bottom: 90px;
+  }
 }
 @media screen and (max-width: 450px) {
   .portfolio__lists {
@@ -58,7 +63,7 @@
   text-decoration: none;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 18px;
+  padding-bottom: 19px;
   border-bottom: 1px solid #424242;
   color: #fff;
   transition: .3s ease-in-out;
@@ -113,7 +118,6 @@
 @media screen and (max-width: 850px) {
   .portfolio__button {
     width: 27px;
-    background-position: left;
   }
 }
 @media screen and (max-width: 450px) {

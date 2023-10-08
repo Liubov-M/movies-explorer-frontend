@@ -1,5 +1,13 @@
 .profile {
   min-height: 100vh;
+  margin: 0 auto;
+  max-width: 410px;
+}
+
+@media (max-width: 425px) {
+  .profile {
+    width: calc(100% - 30px*2);
+  }
 }
 
 .profile__title {
@@ -73,7 +81,6 @@
 }
 
 .profile__error {
-  width: 410px;
   white-space: pre-wrap;
   font-size: 10px;
   font-weight: 400;
@@ -90,30 +97,31 @@
 }
 
 .profile__error:nth-of-type(2) {
-  margin-bottom: 189px;
+  margin-bottom: 200px;
 }
 
 @media (max-width: 768px) {
-  .profile__error:last-of-type {
+  .profile__error:nth-of-type(2) {
     margin-bottom: 195px;
   }
 }
 
 @media (max-width: 425px) {
-  .profile__error:last-of-type {
+  .profile__error:nth-of-type(2) {
     margin-bottom: 150px;
   }
 }
 
 @media (max-width: 320px) {
-  .profile__error:last-of-type {
-    margin-bottom: 345px;
+  .profile__error:nth-of-type(2) {
+    margin-bottom: 356px;
   }
 }
 
 .profile__button {
+  display: block;
+  margin: 0 auto;
   border: 0;
-  width: 410px;
   padding: 0;
   background-color: transparent;
   color: #fff;
@@ -130,7 +138,6 @@
 
 @media (max-width: 425px) {
   .profile__button {
-    width: 260px;
     font-size: 12px;
   }
 }
@@ -142,7 +149,6 @@
   color: #EE3465;
   text-decoration: none;
   display: block;
-  width: 410px;
   text-align: center;
   margin: 16px auto 70px;
   cursor: pointer;
@@ -156,7 +162,6 @@
 @media (max-width: 425px) {
   .profile__link {
     font-size: 12px;
-    width: 260px;
   }
 }
 

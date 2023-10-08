@@ -30,7 +30,7 @@
 .button-show-more {
   width: 320px;
   height: 36px;
-  margin: 75px auto 80px;
+  margin: 80px auto 80px;
   background-color: transparent;
   color: #fff;
   font-size: 12px;
@@ -38,6 +38,11 @@
   line-height: 1.21;
   border: 1px solid #424242;
   border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+}
+.button-show-more:hover {
+  opacity: .7;
 }
 
 @media (max-width: 1025px) {

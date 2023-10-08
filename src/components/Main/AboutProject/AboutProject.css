@@ -6,7 +6,7 @@
   justify-content: space-between;
 }
 .aboutProject-title {
-  margin: 115px auto 0;
+  margin: 110px auto 0;
 }
 @media screen and (max-width: 850px) {
   .aboutProject-title {
@@ -32,6 +32,7 @@
   .aboutProject-info {
     width: calc(100% - 48px*2);
     gap: 26px;
+    margin-top: 70px;
   }
 }
 @media screen and (max-width: 565px) {
@@ -54,6 +55,11 @@
   line-height: 1.21;
   letter-spacing: -.8px;
 }
+@media screen and (max-width: 768px) {
+  .aboutProject-item__title {
+    letter-spacing: -.7px;
+  }
+}
 @media screen and (max-width: 450px) {
   .aboutProject-item__title {
     font-size: 18px;
@@ -65,7 +71,7 @@
 }
 @media screen and (max-width: 850px) {
   .aboutProject-item__description {
-    margin-top: 19px;
+    margin-top: 22px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -88,7 +94,7 @@
 }
 @media screen and (max-width: 850px) {
   .aboutProject__deadlines {
-    margin-top: 95px;
+    margin-top: 91px;
     margin-bottom: 88px;
     width: calc(100% - 48px*2);
     grid-template-columns: 140px 1fr;

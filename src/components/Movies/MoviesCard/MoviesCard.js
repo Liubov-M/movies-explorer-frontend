@@ -22,8 +22,8 @@ return (
       </Link>
       <div className='gallery__card-description'>
         <div className='gallery__text-container'>
-          <p className='gallery__subtitle'>{movie.nameRU}</p>
-          <span className='gallery__duration'>1ч 47м</span>
+          <h2 className='gallery__subtitle'>{movie.nameRU}</h2>
+          <span className='gallery__duration'>1ч42м</span>
         </div>
         {pathname === '/movies' ?
           <button type='button' className={`gallery__select ${click ? 'gallery__select_active' : ''}`} onClick={onClick}></button>

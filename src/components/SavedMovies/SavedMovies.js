@@ -13,10 +13,12 @@ export default function SavedMoviest() {
   )
 
   return (
-    <div className="saved-movies">
-      <ul className="gallery">
-        {moviesElements}
-      </ul>
-    </div>
+    <main className='content'>
+      <section className="saved-movies">
+        <ul className="saved-movies__gallery">
+          {moviesElements}
+        </ul>
+      </section>
+    </main>
   )
 }

@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 23px 70px 0 0;
-  padding: 0;
+  margin: 0 70px 0 0;
+  padding: 24px 0 0;
 }
 
 .header__register {
@@ -14,6 +14,7 @@
   line-height: 16px;
   color: #fff;
   transition: .2s ease-in-out;
+  cursor: pointer;
 }
 .header__register:hover {
   opacity: .7;
@@ -21,7 +22,7 @@
 
 .header__login {
   text-align: center;
-  padding-top: 8px;
+  padding-top: 6px;
   background-color: #3DDC84;
   display: block;
   border-radius: 3px;
@@ -29,12 +30,12 @@
   min-height: 32px;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Inter;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   color: #000;
   transition: .2s ease-in-out;
+  cursor: pointer;
 }
 .header__login:hover {
   opacity: .7;

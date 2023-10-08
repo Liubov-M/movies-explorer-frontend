@@ -26,7 +26,6 @@
   background-color: #F8F8F8;
   color: #C2C2C2;
   cursor: not-allowed;
-  margin-bottom: 50px;
 }
 .authorization__disabled-button:hover {
   opacity: 1;

@@ -21,13 +21,13 @@ export default function MoviesCardList() {
   }
 
   return (
-    <div className='moviesCardList'>
+    <section className='moviesCardList'>
       <ul className='gallery'>
         {moviesElements}
       </ul>
       <div className='show-more'>
         <button type='button' onClick={handleClick} className='button-show-more'>Еще</button>
       </div>
-    </div>
+    </section>
   )
 }
