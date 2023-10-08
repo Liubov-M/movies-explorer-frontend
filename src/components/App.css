@@ -1,0 +1,71 @@
+.page {
+  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0 auto;
+  background-color:#202020;
+  color:#fff
+}
+
+.page__auth {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.21;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #DADADA;
+  width: calc(100% - 70px*2);
+  letter-spacing: -.7px;
+}
+@media screen and (max-width: 850px) {
+  .section-title {
+    width: calc(100% - 50px*2);
+  }
+}
+@media screen and (max-width: 450px) {
+  .section-title {
+    width: calc(100% - 18px*2);
+    padding-bottom: 28px;
+    font-size: 18px;
+    letter-spacing: -0.72px;
+  }
+}
+
+.section-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42;
+}
+@media screen and (max-width: 850px) {
+  .section-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 450px) {
+  .section-text {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+}
+
+.authorization__input::-moz-placeholder {
+  color: transparent;
+}
+
+.authorization__input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.authorization__input:focus {
+  outline: 1px solid #2765cb;
+}

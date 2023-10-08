@@ -1,0 +1,130 @@
+/* portfolio */
+
+.portfolio-title {
+  margin: 98px auto 0;
+  width: calc(100% - 70px*2);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.11;
+  color: #8B8B8B;
+}
+@media screen and (max-width: 850px) {
+  .portfolio-title {
+    width: calc(100% - 50px*2);
+    margin-top: 90px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .portfolio-title {
+    width: calc(100% - 14px*2);
+    margin-top: 70px;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+}
+
+.portfolio__nav {
+  width: calc(100% - 70px*2);
+  margin: 0 auto;
+}
+@media screen and (max-width: 850px) {
+  .portfolio__nav {
+    width: calc(100% - 50px*2);
+  }
+}
+@media screen and (max-width: 450px) {
+  .portfolio__nav {
+    width: calc(100% - 14px*2);
+  }
+}
+
+.portfolio__lists {
+  list-style: none;
+  padding: 0 0 125px;
+  margin: 50px 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .portfolio__lists {
+    padding-bottom: 90px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .portfolio__lists {
+    padding-bottom: 70px;
+    margin-top: 40px;
+  }
+}
+
+.portfolio__link {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 19px;
+  border-bottom: 1px solid #424242;
+  color: #fff;
+  transition: .3s ease-in-out;
+}
+.portfolio__link_nth-type {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.portfolio__link:hover {
+  opacity: .7;
+}
+@media screen and (max-width: 850px) {
+  .portfolio__link {
+    border-bottom: 1px solid #E6E6E6;
+  }
+}
+@media screen and (max-width: 850px) {
+  .portfolio__link_nth-type {
+    border-bottom: none;
+  }
+}
+.portfolio__subtitle {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: -1.2px;
+}
+@media screen and (max-width: 850px) {
+  .portfolio__subtitle {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.78;
+  }
+}
+@media screen and (max-width: 450px) {
+  .portfolio__subtitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: -.7px;
+  }
+}
+
+.portfolio__button {
+  background: url(../../../images/strelka.svg) no-repeat transparent center;
+  width: 29px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+  .portfolio__button {
+    width: 27px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .portfolio__button {
+    width: 18px;
+    height: 28px;
+    background-size: 11px;
+    background-position: center;
+  }
+}
