@@ -115,21 +115,10 @@ class MainApi {
     })
       .then(this._getResponseData);
   }
-
-  // changeLikeCardStatus(cardId, isLiked, token) {
-  //   return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-  //     method: isLiked ? "PUT" : "DELETE",
-  //     credentials: 'include',
-  //     headers: {
-  //       'Authorization' : `Bearer ${token}`,
-  //     },
-  //   })
-  //     .then(this._getResponseData)
-  // }
 }
 
 const mainApi = new MainApi({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.movies.liubovm.nomoredomainsicu.ru',
 });
 
 export default mainApi
