@@ -1,38 +1,43 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Register.css'
 import AuthorizationHeading from '../AuthorizationHeading/AuthorizationHeading';
 import AuthorizationButton from '../AuthorizationButton/AuthorizationButton';
 import { useFormValidation } from '../../utils/useFormValidation';
+import { useEffect } from 'react';
+import { Email_regex } from '../../utils/constants'
 
-export default function Register({ setLoggedIn }) {
+export default function Register({ isError, setIsError, responseMessage, onRegister }) {
   const { values, errors, isValid, isInputValid, handleChange } = useFormValidation()
-  const navigate = useNavigate()
+
+  useEffect(() => {
+    setIsError(false)
+  }, [setIsError, values])
+
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    navigate('/sign-in')
-    setLoggedIn(true)
+    onRegister(values.username, values.email, values.password)
   }
 
   return (
     <main className='page__auth'>
       <div className='authorization'>
         <AuthorizationHeading>Добро пожаловать!</AuthorizationHeading>
-        <form className='authorization__form'
+        <form noValidate className='authorization__form'
           onSubmit={handleSubmit}>
           <span className='authorization__placeholder'>Имя</span>
           <input
-            className={`authorization__input ${isInputValid.userName === undefined || isInputValid.userName ? '' : 'authorization__input_error'}`}
+            className={`authorization__input ${isInputValid.username === undefined || isInputValid.username ? '' : 'authorization__input_error'}`}
             type='text'
-            name='userName'
+            name='username'
             placeholder='name'
             minLength={2}
             maxLength={200}
             required
-            value={values.userName || ''}
+            value={values.username || ''}
             onChange={handleChange}
           />
-          <span className={`authorization__error authorization__error_small ${isInputValid ? 'authorization__error_visible' : ''}`}>{errors.userName}</span>
+          <span className={`authorization__error authorization__error_small ${isInputValid ? 'authorization__error_visible' : ''}`}>{errors.username}</span>
           <span className='authorization__placeholder'>E-mail</span>
           <input
             className={`authorization__input ${isInputValid.email === undefined || isInputValid.email ? '' : 'authorization__input_error'}`}
@@ -42,6 +47,7 @@ export default function Register({ setLoggedIn }) {
             minLength={2}
             maxLength={200}
             required
+            pattern={Email_regex}
             value={values.email || ''}
             onChange={handleChange}
           />
@@ -59,7 +65,10 @@ export default function Register({ setLoggedIn }) {
             onChange={handleChange}
           />
           <span className={`authorization__error authorization__error_small ${isInputValid ? 'authorization__error_visible' : ''}`}>{errors.password}</span>
-          <AuthorizationButton onClick={handleSubmit} isValid={isValid}>Зарегистрироваться</AuthorizationButton>
+          <div className='profile__button-wrapper'>
+            <span className={`profile__error ${isError && 'profile__error_visible'}`}>{responseMessage}</span>
+            <AuthorizationButton isValid={isValid} isError={isError}>Зарегистрироваться</AuthorizationButton>
+          </div>
           <p className='authorization__text'>Уже зарегистрированы? <Link to='/signin' className='authorization__link'>Войти</Link></p>
         </form>
       </div>

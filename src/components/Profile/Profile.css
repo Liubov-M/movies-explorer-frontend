@@ -96,6 +96,24 @@
   color: #EE3465;
 }
 
+.profile__message {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.21;
+  margin-left: 120px;
+  opacity: 0;
+}
+
+.profile__message_error {
+  opacity: 1;
+  color: #EE3465;
+}
+
+.profile__message_success {
+  opacity: 1;
+  color: #fff;
+}
+
 .profile__error:nth-of-type(2) {
   margin-bottom: 200px;
 }
