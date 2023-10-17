@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { convertDuration } from '../../../utils/utils'
-import { Movies_url } from '../../../utils/constants'
+import { MOVIES_URL } from '../../../utils/constants'
 
 import './MoviesCard.css'
 
@@ -17,10 +17,10 @@ useEffect(() => {
 
 function onClick() {
   if (savedMovies.some(item => data.id === item.movieId)) {
-    setClick(false)
+    setClick(true)
     addMovie(data)
   } else {
-    setClick(true)
+    setClick(false)
     addMovie(data)
   }
 }
@@ -28,7 +28,7 @@ return (
   <li className='gallery__card'>
     <div className='gallery__card-container'>
       <Link to={data.trailerLink} target='_blank'>
-        <img src={pathname === '/movies' ? `${Movies_url}${data.image.url}` : data.image} alt={`фильм ${data.nameRU}`} className='gallery__image' />
+        <img src={pathname === '/movies' ? `${MOVIES_URL}${data.image.url}` : data.image} alt={`фильм ${data.nameRU}`} className='gallery__image' />
       </Link>
       <div className='gallery__card-description'>
         <div className='gallery__text-container'>

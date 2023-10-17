@@ -4,9 +4,9 @@ import AuthorizationHeading from '../AuthorizationHeading/AuthorizationHeading';
 import AuthorizationButton from '../AuthorizationButton/AuthorizationButton';
 import { useFormValidation } from '../../utils/useFormValidation';
 import { useEffect } from 'react';
-import { Email_regex } from '../../utils/constants'
+import { EMAIL_REGEX } from '../../utils/constants'
 
-export default function Register({ isError, setIsError, responseMessage, onRegister }) {
+export default function Register({ isError, setIsError, responseMessage, onRegister, isSend }) {
   const { values, errors, isValid, isInputValid, handleChange } = useFormValidation()
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export default function Register({ isError, setIsError, responseMessage, onRegis
             maxLength={200}
             required
             value={values.username || ''}
+            disabled={isSend}
             onChange={handleChange}
           />
           <span className={`authorization__error authorization__error_small ${isInputValid ? 'authorization__error_visible' : ''}`}>{errors.username}</span>
@@ -47,8 +48,9 @@ export default function Register({ isError, setIsError, responseMessage, onRegis
             minLength={2}
             maxLength={200}
             required
-            pattern={Email_regex}
+            pattern={EMAIL_REGEX}
             value={values.email || ''}
+            disabled={isSend}
             onChange={handleChange}
           />
           <span className={`authorization__error authorization__error_small ${isInputValid ? 'authorization__error_visible' : ''}`}>{errors.email}</span>
@@ -62,12 +64,13 @@ export default function Register({ isError, setIsError, responseMessage, onRegis
             maxLength={200}
             required
             value={values.password || ''}
+            disabled={isSend}
             onChange={handleChange}
           />
           <span className={`authorization__error authorization__error_small ${isInputValid ? 'authorization__error_visible' : ''}`}>{errors.password}</span>
           <div className='profile__button-wrapper'>
             <span className={`profile__error ${isError && 'profile__error_visible'}`}>{responseMessage}</span>
-            <AuthorizationButton isValid={isValid} isError={isError}>Зарегистрироваться</AuthorizationButton>
+            <AuthorizationButton isValid={isValid} isError={isError} isSend={isSend}>Зарегистрироваться</AuthorizationButton>
           </div>
           <p className='authorization__text'>Уже зарегистрированы? <Link to='/signin' className='authorization__link'>Войти</Link></p>
         </form>

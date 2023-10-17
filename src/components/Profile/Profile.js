@@ -5,8 +5,9 @@ import { useFormValidation } from '../../utils/useFormValidation';
 import './Profile.css';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import Header from '../Header/Header';
+import { EMAIL_REGEX } from '../../utils/constants'
 
-export default function Profile({ isEdit, setIsEdit, isError, setIsError, responseMessage, setLoggedIn, onUpdateUser }) {
+export default function Profile({ isEdit, setIsEdit, isError, setIsError, responseMessage, setLoggedIn, onUpdateUser, isSend }) {
   const { values, errors, isValid, isInputValid, resetForm, handleChange } = useFormValidation()
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -71,7 +72,7 @@ export default function Profile({ isEdit, setIsEdit, isError, setIsError, respon
                 maxLength={200}
                 required
                 value={values.username || ''}
-                disabled={!isEdit}
+                disabled={!isEdit || isSend}
                 onChange={handleChange}
               />
             </label>
@@ -87,7 +88,8 @@ export default function Profile({ isEdit, setIsEdit, isError, setIsError, respon
                 maxLength={200}
                 required
                 value={values.email || ''}
-                disabled={!isEdit}
+                disabled={!isEdit || isSend}
+                pattern={EMAIL_REGEX}
                 onChange={handleChange}
               />
             </label>
@@ -104,7 +106,7 @@ export default function Profile({ isEdit, setIsEdit, isError, setIsError, respon
               ) : (
                 <div className='profile__button-wrapper'>
                   <span className={`profile__error ${!isValid || isError ? 'profile__error_visible' : ''}`}>{!isError  ? 'При обновлении профиля произошла ошибка' : `${responseMessage}`}</span>
-                  <AuthorizationButton onClick={handleSavedProfile} isValid={isValid} isError={isError}>Сохранить</AuthorizationButton>
+                  <AuthorizationButton onClick={handleSavedProfile} isValid={isValid} isError={isError} isSend={isSend}>Сохранить</AuthorizationButton>
                 </div>
               )}
             </div>

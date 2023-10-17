@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer'
 import { useCallback, useEffect, useState } from 'react';
 import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList';
 
-export default function SavedMovies({ moviesList, setIsError, onDelete }) {
+export default function SavedMovies({ moviesList, setIsError, onDelete, isError }) {
   const [filterMovies, setFilterMovies] = useState(moviesList)
   const [searchMovie, setSearchMovie] = useState('')
   const [shortMovie, setShortMovie] = useState(false)
@@ -56,6 +56,7 @@ export default function SavedMovies({ moviesList, setIsError, onDelete }) {
         shortMovie={shortMovie}
         firstEntrance={firstEntrance}
         setIsError={setIsError}
+        isError={isError}
       />
       <main className='content'>
         <MoviesCardList

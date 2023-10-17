@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 import MoviesCard from '../MoviesCard/MoviesCard'
 import './MoviesCardList.css'
 import {
-  DesctopScreen,
-  TabletScreen,
-  MobileScreen,
-  DesctopScreen_cards,
-  TabletScreen_cards,
-  MobileScreen_cards,
-  DesctopScreen_more,
-  TabletScreen_more,
-  MobileScreen_more,
+  DESCTOPSCREEN,
+  TABLETSCREEN,
+  MOBILESCREEN,
+  DESCTOPSCREEN_CARDS,
+  TABLETSCREEN_CARDS,
+  MOBILESCREEN_CARDS,
+  DESCTOPSCREEN_MORE,
+  TABLETSCREEN_MORE,
+  MOBILESCREEN_MORE
 } from '../../../utils/constants'
 import { useLocation } from 'react-router-dom'
 import Preloader from '../../Preloader/Preloader'
@@ -21,18 +21,18 @@ export default function MoviesCardList({ moviesList, filterMovies, addMovie, net
   const initialMovies = filterMovies.slice(0, numberOfItems)
 
   function visibleMovieCards() {
-    const counter = { initCount: DesctopScreen_cards, moreCount: DesctopScreen_more }
-    if (window.innerWidth < DesctopScreen) {
-      counter.initCount = DesctopScreen_cards
-      counter.moreCount = DesctopScreen_more
+    const counter = { initCount: DESCTOPSCREEN_CARDS, moreCount: DESCTOPSCREEN_MORE }
+    if (window.innerWidth < DESCTOPSCREEN) {
+      counter.initCount = DESCTOPSCREEN_CARDS
+      counter.moreCount = DESCTOPSCREEN_MORE
     }
-    if (window.innerWidth < TabletScreen) {
-    counter.initCount = TabletScreen_cards
-    counter.moreCount = TabletScreen_more
+    if (window.innerWidth < TABLETSCREEN) {
+    counter.initCount = TABLETSCREEN_CARDS
+    counter.moreCount = TABLETSCREEN_MORE
     }
-    if (window.innerWidth < MobileScreen) {
-      counter.initCount = MobileScreen_cards
-      counter.moreCount = MobileScreen_more
+    if (window.innerWidth < MOBILESCREEN) {
+      counter.initCount = MOBILESCREEN_CARDS
+      counter.moreCount = MOBILESCREEN_MORE
     }
     return counter
   };
@@ -40,16 +40,16 @@ export default function MoviesCardList({ moviesList, filterMovies, addMovie, net
     if (pathname === '/movies') {
       setNumberOfItems(visibleMovieCards().initCount)
       function visibleMovieCardsForResize() {
-        if (window.innerWidth >= DesctopScreen) {
+        if (window.innerWidth >= DESCTOPSCREEN) {
           setNumberOfItems(visibleMovieCards().initCount)
         }
-        if (window.innerWidth < DesctopScreen) {
+        if (window.innerWidth < DESCTOPSCREEN) {
           setNumberOfItems(visibleMovieCards().initCount)
         }
-        if (window.innerWidth < TabletScreen) {
+        if (window.innerWidth < TABLETSCREEN) {
           setNumberOfItems(visibleMovieCards().initCount)
         }
-        if (window.innerWidth < MobileScreen) {
+        if (window.innerWidth < MOBILESCREEN) {
           setNumberOfItems(visibleMovieCards().initCount)
         }
       }

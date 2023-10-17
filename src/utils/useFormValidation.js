@@ -21,12 +21,13 @@ export function useFormValidation() {
   };
 
   const resetForm = useCallback(
-    (newValues = {}, newErrors = {}, newIsValid = false) => {
-      setValues(newValues);
-      setErrors(newErrors);
-      setIsValid(newIsValid);
+    (data = {}) => {
+      setValues(data);
+      setErrors({});
+      setIsValid(false);
+      setIsInputValid({})
     },
-    [setValues, setErrors, setIsValid]
+    []
   );
 
   return { values, errors, isValid, isInputValid, setIsValid, setValues, setErrors, resetForm, handleChange };

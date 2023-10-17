@@ -4,7 +4,7 @@ import { useFormValidation } from '../../../utils/useFormValidation'
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function SearchForm({ searchMovies, changeShort, searchMovie, shortMovie, setIsError, IsError, moviesList }) {
+export default function SearchForm({ searchMovies, changeShort, searchMovie, shortMovie, setIsError, isError, moviesList, firstEntrance }) {
   const { values, handleChange, resetForm } = useFormValidation()
   const { pathname } = useLocation()
 
@@ -47,9 +47,9 @@ export default function SearchForm({ searchMovies, changeShort, searchMovie, sho
               onChange={onChange}/>
             <button type='submit' className='searchForm__submit'></button>
           </div>
-          <span className={`searchForm__error ${IsError && 'searchForm__error_active'}`}>{'Нужно ввести ключевое слово'}</span>
+          <span className={`searchForm__error ${isError && 'searchForm__error_active'}`}>{'Нужно ввести ключевое слово'}</span>
           <div className='searchForm__switch'>
-            <FilterCheckbox changeShort={changeShort} shortMovie={shortMovie} />
+            <FilterCheckbox changeShort={changeShort} shortMovie={shortMovie} firstEntrance={firstEntrance}/>
             <p className='searchForm-text'>Короткометражки</p>
           </div>
         </form>

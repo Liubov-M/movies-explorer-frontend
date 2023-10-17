@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import ProtectedRoute from './ProtectedRoute';
 import './App.css';
@@ -24,6 +24,7 @@ function App() {
   const [isEdit, setIsEdit] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [isSend, setIsSend] = useState(false)
 
   useEffect(() => {
     if (localStorage.jwt) {
@@ -47,6 +48,7 @@ function App() {
   }, [loggedIn])
 
   function onLogin(email, password) {
+    setIsSend(true)
     mainApi.login(email, password)
       .then((res) => {
         if(res.token)
@@ -59,9 +61,11 @@ function App() {
           setResponseMessage(`Ошибка авторизации ${err}`);
           console.log(`Ошибка авторизации ${err}`)
       })
+      .finally(() => setIsSend(false))
   }
 
   function onRegister(username, email, password) {
+    setIsSend(true)
     mainApi.register(username, email, password)
       .then((res) => {
         if(res) {
@@ -74,25 +78,28 @@ function App() {
         setResponseMessage(`Ошибка регистрации ${err}`);
         console.log(`Ошибка регистрации ${err}`)
       })
+      .finally(() => setIsSend(false))
   }
 
   function handleUpdateUser(username, email) {
+    setIsSend(true)
     mainApi.setUserInfo(username, email, localStorage.jwt)
       .then((res) => {
         setCurrentUser(res);
         setIsEdit(false)
       })
       .catch((err) => {
-        console.log(err)
         setIsError(true)
         setResponseMessage(`Ошибка при внесении данных пользователя, ${err}`);
         console.log(`Ошибка при внесении данных пользователя, ${err}`)
       })
+      .finally(() => setIsSend(false))
   }
 
   function handleToggleSelectMovie(data) {
     const isAddMovie = moviesList.some(item => data.id === item.movieId);
     const toggleMovie = moviesList.filter((item) => {return item.movieId === data.id})
+
     if(isAddMovie) {
       handleMovieDelete(toggleMovie[0]._id)
     } else {
@@ -121,19 +128,23 @@ function App() {
         <CurrentUserContext.Provider value={currentUser}>
             <Routes>
               <Route path='/signin' element={
+                loggedIn ? <Navigate to='/movies' replace /> :
                 <Login onLogin={onLogin}
                   isError={isError}
                   setIsError={setIsError}
                   responseMessage={responseMessage}
-                  setLoggedIn={setLoggedIn}/>
+                  setLoggedIn={setLoggedIn}
+                  isSend={isSend}/>
               } />
 
               <Route path='/signup' element={
+                loggedIn ? <Navigate to='/movies' replace /> :
                 <Register onRegister={onRegister}
                   isError={isError}
                   setIsError={setIsError}
                   responseMessage={responseMessage}
-                  setLoggedIn={setLoggedIn}/>
+                  setLoggedIn={setLoggedIn}
+                  isSend={isSend}/>
               } />
 
               <Route path='/' element={
@@ -158,6 +169,7 @@ function App() {
                 element={SavedMovies}
                 moviesList={moviesList}
                 setIsError={setIsError}
+                isError={isError}
                 onDelete={handleMovieDelete}
                 loggedIn={loggedIn}
                 />
@@ -173,6 +185,7 @@ function App() {
                 loggedIn={loggedIn}
                 setLoggedIn={setLoggedIn}
                 onUpdateUser={handleUpdateUser}
+                isSend={isSend}
                 />
               }/>
 

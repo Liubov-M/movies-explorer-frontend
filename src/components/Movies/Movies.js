@@ -4,6 +4,7 @@ import MoviesCardList from './MoviesCardList/MoviesCardList'
 import Header from '../Header/Header'
 import SearchForm from './SearchForm/SearchForm'
 import Footer from '../Footer/Footer'
+import { SHORT_MOVIE_DURATION } from '../../utils/constants'
 
 
 export default function Movies({ setIsError, moviesList, addMovie, isError }) {
@@ -22,7 +23,7 @@ export default function Movies({ setIsError, moviesList, addMovie, isError }) {
     setSearchMovie(userSearch)
     setFilterMovies(movies.filter((movie) => {
       const searchRequest = movie.nameRU.toLowerCase().includes(userSearch.toLowerCase())
-      return shortMovie ? (searchRequest && movie.duration <= 40) : searchRequest
+      return shortMovie ? (searchRequest && movie.duration <= SHORT_MOVIE_DURATION) : searchRequest
     }))
   }, [])
 
@@ -71,7 +72,6 @@ export default function Movies({ setIsError, moviesList, addMovie, isError }) {
     }
   }
 
-
   return (
     <>
       <Header />
@@ -83,6 +83,7 @@ export default function Movies({ setIsError, moviesList, addMovie, isError }) {
         isError={isError}
         searchMovie={searchMovie}
         shortMovie={shortMovie}
+        firstEntrance={firstEntrance}
         />
       <main className='content'>
           <MoviesCardList
