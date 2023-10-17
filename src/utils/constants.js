@@ -1,0 +1,12 @@
+export const MOVIES_URL = 'https://api.nomoreparties.co';
+export const DESCTOPSCREEN = 1280;
+export const TABLETSCREEN = 768;
+export const MOBILESCREEN = 525;
+export const DESCTOPSCREEN_CARDS = 16;
+export const TABLETSCREEN_CARDS = 8;
+export const MOBILESCREEN_CARDS = 5;
+export const DESCTOPSCREEN_MORE = 4;
+export const TABLETSCREEN_MORE = 2;
+export const MOBILESCREEN_MORE = 2;
+export const EMAIL_REGEX = "^\\S+@\\S+\\.\\S+$";
+export const SHORT_MOVIE_DURATION = 40;
